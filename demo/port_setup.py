@@ -19,8 +19,8 @@ def setup():
     print(port)
     print("")
 
-    baud = 115200
-    _baud = input("Please input baud(default:115200):")
+    baud = 1000000
+    _baud = input("Please input baud(default:1000000):")
     try:
         baud = int(_baud)
     except Exception:

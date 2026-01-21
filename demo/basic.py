@@ -7,8 +7,9 @@ from pymycobot.genre import Angle, Coord
 sys.path.append(os.path.dirname(__file__))
 from port_setup import setup
 
-reset = [153.19, 137.81, -153.54, 156.79, 87.27, 13.62]
+# reset = [153.19, 137.81, -153.54, 156.79, 87.27, 13.62]
 
+reset = [0, 0, 0, 0, 0, 0]
 
 def test(mycobot):
     print("\nStart check basic options\n")
@@ -49,10 +50,12 @@ def test(mycobot):
     print("::send_coord() ==> send coord id: X, coord value: -40, speed: 70\n")
     time.sleep(2)
 
-    print("::set_free_mode()\n")
+    print("::send_angles() ==> send angles {}, speed 100\n".format(reset))
     mycobot.send_angles(reset, 100)
     time.sleep(5)
-    mycobot.release_all_servos()
+
+    # print("::set_free_mode()\n")
+    # mycobot.release_all_servos()
 
     print("=== check end ===\n")
 
@@ -71,6 +74,8 @@ if __name__ == "__main__":
 |     send_coords()                        |
 |     get_coords()                         |
 |     send_coord()                         |
+|     send_angles()                        |
+|     set_free_mode()                      |
 --------------------------------------------
           """
     )
